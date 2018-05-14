@@ -15,8 +15,6 @@ Simple binary to colorize output.
 
     $ function kubectl() { $(which kubectl) $* | .build/rainbow_darwin_amd64 }
 
-    $ kubectl | less -R
-
 ![Alt text](img/rainbow.png?raw=true "Rainbow")
 
 ## License
