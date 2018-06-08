@@ -6,16 +6,20 @@ Simple binary to colorize output.
 
     $ go get github.com/golang/dep/cmd/dep
 
+## Installation
+
+    $ go get github.com/retr0h/rainbow
+
+## Usage
+
+    $ function kubectl() { $(which kubectl) $* | rainbow }
+
+![Alt text](img/rainbow.png?raw=true "Rainbow")
+
 ## Building
 
     $ make build
     $ tree .build/
-
-## Usage
-
-    $ function kubectl() { $(which kubectl) $* | .build/rainbow_darwin_amd64 }
-
-![Alt text](img/rainbow.png?raw=true "Rainbow")
 
 ## License
 
