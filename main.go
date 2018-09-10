@@ -22,9 +22,11 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"os"
 
 	lol "github.com/kris-nova/lolgopher"
+	"golang.org/x/crypto/ssh/terminal"
 )
 
 var (
@@ -38,8 +40,15 @@ var (
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
-		lol.Println(scanner.Text())
+
+	if terminal.IsTerminal(int(os.Stdout.Fd())) {
+		for scanner.Scan() {
+			lol.Println(scanner.Text())
+		}
+	} else {
+		for scanner.Scan() {
+			fmt.Println(scanner.Text())
+		}
 	}
 
 	if err := scanner.Err(); err != nil {
