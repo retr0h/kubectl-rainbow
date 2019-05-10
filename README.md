@@ -12,7 +12,16 @@ Simple binary to colorize output.
 
 ## Usage
 
-    $ function kubectl() { $(which kubectl) $* | rainbow }
+    $ cat <<'EOL' >kubectl-color
+    #!/bin/sh
+    exec kubectl $* | rainbow
+    EOL
+
+    $ chmod +x kubectl-color
+    $ mv kubectl-color ~/bin/
+    $ kubectl color get po nginx
+
+    $ alias k='kubectl color'
 
 ![Alt text](img/rainbow.png?raw=true "Rainbow")
 
