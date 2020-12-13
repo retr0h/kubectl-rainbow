@@ -8,13 +8,13 @@ Simple binary to colorize output.
 
 ## Installation
 
-    $ go get github.com/retr0h/rainbow
+    $ go get github.com/retr0h/kubectl-rainbow
 
 ## Usage
 
     $ cat <<'EOL' >kubectl-color
     #!/bin/sh
-    exec kubectl $* | rainbow
+    exec kubectl $* | $GOPATH/bin/kubectl-rainbow
     EOL
 
     $ chmod +x kubectl-color
